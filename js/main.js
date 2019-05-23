@@ -1,0 +1,143 @@
+var app = new Vue({
+  el: '#app',
+  data: {
+    // message: "hellow Vue.js",
+    // isActive: false,
+    // count: 0,
+    todoText: '',
+    todos: [
+      { text: '●HTMLとは２', done:false, plus:'plusTwo'},
+        { text: 'セマンティックなHTMLの記述', done: false, side:'sideLeft'},
+        { text: 'SEOの基礎', done: false, side:'sideLeft' },
+        { text: 'Accessibility', done: false, side:'sideLeft' },
+      { text: '●CSSとは２', done: false, plus:'plusTwo' },
+        { text: 'メディアクエリ', done: false, side:'sideRight' },
+        { text: 'CSS3の学習', done: false, side:'sideRight' },
+      { text: '◯レイアウトの作成', done: false, side: 'sideRight' },
+        { text: 'Float', done: false, side:'sideRight2' },
+        { text: 'Positioning', done: false, side:'sideRight2' },
+        { text: 'display', done: false, side:'sideRight2' },
+        { text: 'Boxモデル', done: false, side:'sideRight2' },
+        { text: 'CSS Grid', done: false, side:'sideRight2' },
+        { text: 'Flexbox', done: false, side:'sideRight2' },
+      { text: '●javascript２', done: false, plus:'plusTwo' },
+        { text: 'シンタックスとコンストラクタ', done: false, side:'sideLeft' },
+        { text: 'DOM操作', done: false, side:'sideLeft' },
+        { text: 'API/Ajaxの取得', done: false, side:'sideLeft' },
+        { text: 'ES6+やモジュラーjs', done: false, side:'sideLeft' },
+        { text: 'Web知識の基礎（ホスティング、イベントバブリング、スコーププロトタイプ、Shadow DOM、Strict、ブラウザのしくみ、DNS、HTTP)', done: false, side:'sideLeft' },
+      { text: '●Package Managerの知識２', done: false, plus:'plusTwo' },
+        { text: 'npm２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'yarn２', done: false, plus:'plusTwo', side:'sideLeft' },
+      { text: '●CSSプリプロセッサ２', done: false, plus:'plusTwo' },
+        { text: 'SASS２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'postCSS', done: false, side:'sideLeft' },
+      { text: '●CSSフレームワーク２', done: false, plus:'plusTwo' },
+        { text: 'Bootstrap２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'materialize CSS', done: false, side:'sideRight' },
+        { text: 'Bulma', done: false, side:'sideRight' },
+        { text: 'semantic UI', done: false, side:'sideRight' },
+      { text: '●CSSアーキテクチャ２', done: false, plus:'plusTwo' },
+        { text: 'BEM２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'OOCSS', done: false, side:'sideLeft' },
+        { text: 'SMACSS', done: false, side:'sideLeft' },
+      { text: '●ビルドツール２', done: false, plus:'plusTwo' },
+      { text: '◯LinterやFormater２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Pettier２', done: false, plus:'plusTwo', side:'sideLeft2' },
+        { text: 'ESLint２', done: false, plus:'plusTwo', side:'sideLeft2' },
+        { text: 'JSHint', done: false, side:'sideLeft2' },
+        { text: 'JSLint', done: false, side:'sideLeft2' },
+        { text: 'JSCS', done: false, side:'sideLeft2' },
+      { text: '◯Module Bundler２', done: false, plus:'plusTwo' },
+        { text: 'Webpack２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'Paecel', done: false, side:'sideRight' },
+        { text: 'Rollup', done: false, side:'sideRight' },
+      { text: '◯タスクランナー２', done: false, plus:'plusTwo' },
+        { text: 'npm script２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'gulp', done: false, side:'sideRight' },
+      { text: '●jsフレームワーク２', done: false, plus:'plusTwo' },
+      { text: '◯React.js２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'Redux２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'MobX２', done: false, plus:'plusTwo', side:'sideRight2' },
+      { text: '◯Angular', done: false, side:'sideRight' },
+        { text: 'RxJS２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'ngirx２', done: false, plus:'plusTwo', side:'sideRight2' },
+      { text: '◯Vue.js', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'Vuex２', done: false, plus:'plusTwo', side:'sideRight2' },
+      { text: '●CSS in js', done: false },
+        { text: 'Styled コンポーネント２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'CSS モジュール２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'Emotion', done: false, side:'sideRight' },
+        { text: 'radium', done: false, side:'sideRight' },
+        { text: 'Glamorous', done: false, side:'sideRight' },
+      { text: '●テスト２', done: false, plus:'plusTwo' },
+        { text: 'Jest２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Enzyme２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Cypress２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Unitテスト２', done: false, plus:'plusTwo', side:'sideLeft2' },
+        { text: 'Integrationテスト２', done: false, plus:'plusTwo', side:'sideLeft2' },
+        { text: 'Functionalテスト２', done: false, plus:'plusTwo', side:'sideLeft2' },
+      { text: '●プログレッシブWebApps', done: false },
+        { text: '◯WebAPIの理解', done: false, side:'sideRight' },
+        { text: 'Storage２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'web sockets２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'ServiceWorker２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'Location', done: false, side:'sideRight2' },
+        { text: 'Notifications', done: false, side:'sideRight2' },
+        { text: 'Device Orientation', done: false, side:'sideRight2' },
+        { text: 'Payment', done: false, side:'sideRight2' },
+        { text: 'Credit', done: false, side:'sideRight2' },
+        { text: '◯パフォーマンスの計算、測定、改善', done: false, side:'sideRight' },
+        { text: 'PRPL パターン２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'RAIL モデル２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'パフォーマンスMetrics２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'Light Houseの使用２', done: false, plus:'plusTwo', side:'sideRight2' },
+        { text: 'Dev Toolsの使用２', done: false, plus:'plusTwo', side:'sideRight2' },
+      { text: '●タイプチェッカー２', done: false, plus:'plusTwo' },
+        { text: 'TypeScript２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Flow', done: false, side:'sideLeft' },
+      { text: '●サーバーサイドレンダリング', done: false },
+        { text: '◯React.js２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'Next.js２', done: false, plus:'plusTwo', side:'sideLeft2' },
+        { text: 'After.js', done: false, side:'sideLeft2' },
+        { text: '◯Angular', done: false, side:'sideLeft' },
+        { text: 'Universal', done: false, side:'sideLeft2' },
+        { text: '◯Vue.js', done: false, side:'sideLeft' },
+        { text: 'Nuxt.js', done: false, side:'sideLeft2' },
+      { text: '●静的サイトの進化', done: false },
+        { text: 'GatsbyJS２', done: false, side:'sideRight' },
+      { text: '●デスクトップアプリ', done: false },
+        { text: 'Electron２', done: false, plus:'plusTwo', side:'sideRight' },
+        { text: 'Proton Native', done: false, side:'sideRight' },
+        { text: 'Carlo', done: false, side:'sideRight' },
+      { text: '●モバイルアプリ', done: false },
+        { text: 'React Native２', done: false, plus:'plusTwo', side:'sideLeft' },
+        { text: 'NativeScript', done: false, side:'sideLeft' },
+      { text: '●WebAssembly', done: false },
+    ]
+  },
+  computed: {
+    remaining: function () {
+      var count = 0;
+      var todos = this.todos;
+      var length = todos.length;
+
+      // var pluscount = 0;
+      // var pluses = this.plus;
+      //plusTwoの数（plse:の数）
+      // var pluslength = pluses.length;
+      
+      for (var i = 0; i < length; i++) {
+        if (!todos[i].done) {
+          count++;
+        }
+      }
+      // for (var i = 0; i < length; i++) {
+      //   if (todos[i].plus === 'plusTwo') {
+      //     pluscount++;
+      //   }
+      // }
+      return count;
+    },
+  },
+});

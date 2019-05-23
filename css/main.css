@@ -1,0 +1,95 @@
+
+body{
+    width: 980px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10% !important;
+}
+header{
+    height: 30px;
+    background:gray;
+    color: white;
+}
+footer{
+    height: 30px;
+    background:gray;
+    color: white;
+}
+.imgWrap{
+    /* ファイル名に半角スペースがある場合、VScodeのパス設定が効きません */
+    background: url(../img/Frontend_roadmap.png);
+    background-size: cover;
+    height: 2600px;
+    margin:5px 0px;
+}
+/* 背景透明化用のもの */
+.bgClear{
+    height:100%;
+    background: rgba(255,255,255,0.5);
+}
+/* li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+label span{
+    padding: 10px;
+    margin: 3px;
+    width: 120px;
+    height:auto;
+    font-size: 14px;
+
+    display: inline-block;
+    text-decoration: none;
+    background: #d3a262;/*ボタン色*/
+    color: rgb(41, 40, 40);
+    border-bottom: solid 4px #958762;
+    border-radius: 20px;
+}
+/*ボタンを押したとき*/
+label span.done{
+    background-color: gray !important;
+    color: white !important;
+}
+label{
+    position: relative;
+    cursor: pointer;
+}
+.cheakNo{
+    display: none;
+}
+ul{
+    list-style: none;
+}
+.plusTwo{
+    background: rgba(228, 224, 26, 0.986) !important;
+    color: rgb(19, 16, 16)
+}
+.sideLeft{
+    transform: translateX(-85%) !important;
+    top: -45px !important;
+    position: relative !important;
+    width: 200px;
+    height: auto;
+}
+.sideLeft2{
+    transform: translateX(-120%) !important;
+    top: -45px !important;
+    position: relative !important;
+    width: 150px;
+    background: #daa430;/*ボタン色*/
+}
+.sideRight{
+    transform: translateX(85%) !important;
+    top: -45px !important;
+    position: relative !important;
+    width: 200px;
+}
+.sideRight2{
+    transform: translateX(150%) !important;
+    top: -45px !important;
+    position: relative !important;
+    width: 150px;
+    background: #daa430;/*ボタン色*/
+}

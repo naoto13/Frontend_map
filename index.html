@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>FrontEnd</title>
+</head>
+
+<body>
+    <header>
+        <div>初めての方へ</div>
+    </header>
+    <main class="imgWrap">
+        <div class="bgClear">
+            <div id="app">
+                <h2>Todo</h2>
+                    <!-- <p>
+                        全{{ todos.length+pluslength }}件中残り{{remaining}}件
+                    </p>
+                    <p>
+                        進行度：{{ Math.ceil((1-remaining/(todos.length+pluslength)*100) }}%
+                    </p> -->
+
+                    <p>
+                        全{{ todos.length }}件中残り{{remaining}}件
+                    </p>
+                    <p>
+                        進行度：{{ Math.ceil((1-remaining/todos.length)*100) }}%
+                    </p>
+
+                <ul class="list-unstyled">
+                    <li v-for="todo in todos">
+                        <label>
+                            <input type="checkbox" class="cheakNo" v-model="todo.done">
+                                <span v-bind:class="[ {'done': todo.done} , todo.plus ,todo.side]">{{todo.text}}</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>Vue.js</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
